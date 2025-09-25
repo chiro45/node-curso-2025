@@ -1,0 +1,6 @@
+# Ignorar node_modules en cualquier subcarpeta
+**/node_modules/*
+
+# Ignorar .env en cualquier subcarpeta
+**/.env
+**/.env.*

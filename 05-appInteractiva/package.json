@@ -11,6 +11,8 @@
   "description": "",
   "dependencies": {
     "colors": "^1.4.0",
+    "inquirer": "7.3.3",
+    "uuid": "^13.0.0",
     "yargs": "^18.0.0"
   }
 }
