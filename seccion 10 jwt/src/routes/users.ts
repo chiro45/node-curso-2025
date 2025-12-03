@@ -12,6 +12,8 @@ import {
   esRolValido,
   existeUsuarioPorId,
 } from "../helpers/db-validators";
+import { validateJWT } from "../middlewares/validar-jwt";
+import { hasRole, validateAdminRole } from "../middlewares/validate-rol";
 
 export const routeUser: Router = Router();
 
@@ -164,6 +166,9 @@ routeUser.post(
 routeUser.delete(
   "/:id",
   [
+    validateJWT,
+    //validateAdminRole,
+    hasRole("ADMIN_ROLE"),
     param("id", "No es un ID válido").isMongoId(),
     param("id").custom(existeUsuarioPorId),
     validarCampos,

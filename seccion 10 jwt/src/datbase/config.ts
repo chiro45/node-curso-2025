@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import dotenv from 'dotenv';
-dotenv.config();
+
 const urlMongo = process.env.MONGODB_CNN || "";
 export const dbConnection = async () => {
   try {

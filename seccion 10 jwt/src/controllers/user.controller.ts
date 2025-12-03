@@ -1,10 +1,11 @@
 import { Response, Request, RequestHandler } from "express";
-import { User } from "../models/usuario";
+import { User } from "../models/user";
 import { CreateUserDto, UpdateUserDto } from "../types/user/usuario.dtos";
+21;
 import bcrypt from "bcryptjs";
 
 export const getUsers: RequestHandler = async (req: Request, res: Response) => {
-  const { limit = 5,  page = 0 } = req.query;
+  const { limit = 5, page = 0 } = req.query;
 
   const [total, usuarios] = await Promise.all([
     User.countDocuments({ state: true }),
@@ -20,14 +21,14 @@ export const getUsers: RequestHandler = async (req: Request, res: Response) => {
 export const putUsers: RequestHandler = async (req: Request, res: Response) => {
   const { id } = req.params;
   const { _id, password, google, email, ...resto }: UpdateUserDto = req.body;
-  
+
   const datosActualizar: UpdateUserDto = { ...resto };
 
   if (password) {
     const salt = bcrypt.genSaltSync(10);
     datosActualizar.password = bcrypt.hashSync(password, salt);
   }
-  
+
   const usuario = await User.findByIdAndUpdate(id, datosActualizar, {
     new: true,
   });

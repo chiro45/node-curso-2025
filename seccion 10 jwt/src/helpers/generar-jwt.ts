@@ -1,10 +1,9 @@
 import jwt from "jsonwebtoken";
 const key = process.env.SECRETORPRIVATEKEY;
 
-export const generarJWT = (uuid: string) => {
+export const generarJWT = (uid: string) => {
   return new Promise((res, rej) => {
-    const payload = { uuid };
-    console.log(uuid)
+    const payload = { uid };
     jwt.sign(payload, key!, { expiresIn: "4h" }, (err, token) => {
       if (err) {
         console.log(err);
