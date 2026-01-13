@@ -1,4 +1,4 @@
-# Repo: Prácticas del curso de Node (Fernando Herrera)
+# Repo: Prácticas del curso de Node 
 
 Este repositorio agrupa ejercicios y pequeñas APIs realizados siguiendo el curso de Node de Fernando Herrera. Contiene proyectos de práctica que cubren fundamentos de Node, manejo de archivos, servidores REST, autenticación con JWT, websockets, colas y ejemplos de estructuras más modernas con TypeScript y herramientas actuales.
 
