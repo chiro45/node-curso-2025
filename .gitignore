@@ -4,3 +4,10 @@
 # Ignorar .env en cualquier subcarpeta
 **/.env
 **/.env.*
+**/uploads/products/**.jpg
+**/uploads/products/**.jpeg
+**/uploads/products/**.png
+**/uploads/users/**.jpg
+**/uploads/users/**.jpeg
+**/uploads/users/**.png
+.DS_Store
